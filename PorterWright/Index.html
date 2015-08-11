@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/App/app.js"></script>
+    <script src="Scripts/App/Services/commonService.js"></script>
+    <link href="Content/app.css" rel="stylesheet" />
+</head>
+<body ng-app="app" ng-controller="appController">
+    <div ng-repeat="menuItem in ui.menuItems">
+        <a href="" ng-click="menuClick(menuItem.view, menuItem.id)">{{menuItem.text}}</a>
+        <div ng-repeat="menuItem2 in menuItem.menuItems">
+            <a href="" ng-click="menuClick(menuItem2.view, menuItem2.id)">{{menuItem2.text}}</a>
+        </div>
+    </div>
+    <div ui-view></div>
+</body>
+</html>
